@@ -173,16 +173,16 @@ if bt1 :
     
 form2 = tab2.form(key="Optionss")
 form2.header("统计一周司机地区及仓库")
-
+form2.subheader(f"统计日期为：{next_week}")
 alldrivers = form2.file_uploader("请在这里上传统计文件：", accept_multiple_files=True)
 #englishdrivers = form2.file_uploader("请在这里上传Google Form：", accept_multiple_files=False)
 bt2 = form2.form_submit_button("提交")
 main_container2 = tab2.container()
 main_container2.write("")
-cm1,cm2,cm3 = tab2.columns(3)
+cm1,cm2 = tab2.columns(2)
 cm1.subheader("司机号")
 cm2.subheader("地区")
-cm3.subheader("仓库")
+
 
 if bt2 :
     st.sidebar.write('\n -----     开始统计     ----- ')
@@ -287,7 +287,6 @@ if bt2 :
         if str(row[2]) == '895' : w = 'Mississauga'
         cm1.write(row[0])
         cm2.write(row[1])
-        cm3.write(w)
 
     ctt = cur.execute("SELECT count(Driver) FROM All_List").fetchone()[0]
     st.sidebar.write('这周一共报名了',str(ctt),'个司机')
