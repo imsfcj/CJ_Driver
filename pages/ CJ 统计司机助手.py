@@ -10,7 +10,7 @@ from google.oauth2 import service_account
 from gsheetsdb import connect
 from collections import defaultdict
 
-st.set_page_config(page_title='CJ sheet助手',page_icon = "🛐" ,initial_sidebar_state = 'expanded')
+st.set_page_config(page_title='CJ 统计司机助手',page_icon = "🛐" ,initial_sidebar_state = 'expanded')
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
@@ -78,8 +78,6 @@ end_of_week = next_week + timedelta(days=7 - day_of_week)
 next_week = "{}-{}".format(start_of_week.strftime("%b%d"), end_of_week.strftime("%b%d"))
 #st.write(next_week)
 
-
-
 st.title("统计司机助手")
 tab1,tab2 = st.tabs(["每日统计","一周统计"])    
 form1 = tab1.form(key="Options")
@@ -89,11 +87,6 @@ choice = form1.selectbox("想统计哪一天的司机报名情况？",('Mon','Tu
 main_container1 = tab1.container()
 main_container1.write("")
 bt1 = form1.form_submit_button("提交")
-    
-    
-    
-    
-    
     
 if bt1 :
     #st.write(choice)
