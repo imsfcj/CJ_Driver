@@ -308,8 +308,8 @@ if bt2 :
     spread = Spread(spreadsheetname,client = client)
     sh = client.open(spreadsheetname)
     the_sheets = sh.worksheet('template')
-    the_sheets.duplicate(insert_sheet_index=None, new_sheet_id=None, new_sheet_name=None)
-    spread.df_to_sheet(df,start=(1,1),sheet='Copy of template',index = False)
+    the_sheets.duplicate(insert_sheet_index=None, new_sheet_id=None, new_sheet_name=next_week)
+    spread.df_to_sheet(df,start=(1,1),sheet=next_week,index = False)
     
     
     main_container2.download_button(label='📥 下载每周司机统计信息',
