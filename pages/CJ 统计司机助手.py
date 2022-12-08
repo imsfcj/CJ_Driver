@@ -127,11 +127,6 @@ for i in range(7):
     # Add the date to the dictionary
     dates[day_of_week_str] = date.strftime("%b%d_%a")
 
-# Print the results
-for day, date in dates.items():
-    st.write(day, date)
-
-
 # Print the starting and ending dates
 this_week = "{}-{}".format(start_of_week.strftime("%b%d"), end_of_week.strftime("%b%d"))
 #st.write(this_week)
@@ -185,7 +180,7 @@ if bt1 :
     df = df.apply(lambda x: pd.Series(x.dropna().values)).fillna(' ').dropna(axis=1, how='all')
     st.write(df)
     schedule_sheet = sh.worksheet('day_temp')
-    schedule_sheet.duplicate(insert_sheet_index=None, new_sheet_id=None, new_sheet_name=tmr_str)
+    schedule_sheet.duplicate(insert_sheet_index=None, new_sheet_id=None, new_sheet_name=dates[choice])
     spread.df_to_sheet(df,start=(1,1),sheet=tmr_str,index = False)
     st.sidebar.write('\n -----     统计完毕     ----- ')
     
