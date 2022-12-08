@@ -125,11 +125,11 @@ for i in range(7):
     day_of_week_str = date.strftime("%a")
 
     # Add the date to the dictionary
-    dates[day_of_week_str] = date
+    dates[day_of_week_str] = date.strftime("%b%d_%a")
 
 # Print the results
 for day, date in dates.items():
-    st.write(day, date.strftime("%b%d_%a"))
+    st.write(day, date)
 
 
 # Print the starting and ending dates
