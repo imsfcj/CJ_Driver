@@ -114,6 +114,24 @@ day_of_week = today.isoweekday()
 start_of_week = today - timedelta(days=day_of_week - 1)
 end_of_week = today + timedelta(days=7 - day_of_week)
 
+dates = {}
+
+# Loop through each day of the week
+for i in range(7):
+    # Calculate the date for the current day
+    date = start_of_week + timedelta(days=i)
+
+    # Get the day of the week as a string (Monday, Tuesday, etc.)
+    day_of_week_str = date.strftime("%a")
+
+    # Add the date to the dictionary
+    dates[day_of_week_str] = date
+
+# Print the results
+for day, date in dates.items():
+    st.write(day, date.strftime("%b%d_%a"))
+
+
 # Print the starting and ending dates
 this_week = "{}-{}".format(start_of_week.strftime("%b%d"), end_of_week.strftime("%b%d"))
 #st.write(this_week)
