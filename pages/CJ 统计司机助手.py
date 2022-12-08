@@ -181,7 +181,7 @@ if bt1 :
     st.write(df)
     schedule_sheet = sh.worksheet('day_temp')
     schedule_sheet.duplicate(insert_sheet_index=None, new_sheet_id=None, new_sheet_name=dates[choice])
-    spread.df_to_sheet(df,start=(1,1),sheet=tmr_str,index = False)
+    spread.df_to_sheet(df,start=(1,1),sheet=dates[choice],index = False)
     st.sidebar.write('\n -----     统计完毕     ----- ')
     
 form2 = tab2.form(key="Optionss")
