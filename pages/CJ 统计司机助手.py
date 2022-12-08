@@ -155,7 +155,7 @@ main_container1.write("")
 bt1 = form1.form_submit_button("提交")
     
 if bt1 :
-    #st.write(choice)
+    st.sidebar.write(f"日期：{dates[choice]}")
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
 
