@@ -155,6 +155,7 @@ main_container1.write("")
 bt1 = form1.form_submit_button("提交")
     
 if bt1 :
+    if the_day == 'Sun' : this_week = next_week
     st.sidebar.write(f"日期：{dates[choice]}")
     scope = ['https://spreadsheets.google.com/feeds',
              'https://www.googleapis.com/auth/drive']
